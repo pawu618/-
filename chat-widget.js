@@ -34,13 +34,23 @@ class ChatWidget {
             this.toggleChat();
         }, {passive: false});
         
-        // Setup close button
-        const closeButton = this.widget.querySelector('.close-chat');
-        closeButton.addEventListener('click', () => this.toggleChat());
-        // Add touchstart for mobile reliability
-        closeButton.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            this.toggleChat();
+        // Event delegation for close button (works for dynamic content)
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('close-chat')) {
+                console.log('Close button clicked (delegated)');
+                this.isOpen = false;
+                this.widget.classList.remove('active');
+                this.widget.style.display = '';
+            }
+        });
+        document.addEventListener('touchend', (e) => {
+            if (e.target.classList.contains('close-chat')) {
+                e.preventDefault();
+                console.log('Close button touchend (delegated)');
+                this.isOpen = false;
+                this.widget.classList.remove('active');
+                this.widget.style.display = '';
+            }
         }, {passive: false});
     }
 
