@@ -121,16 +121,16 @@ document.addEventListener('DOMContentLoaded', function () {
   if (closeBtn && chatWidget) {
     closeBtn.addEventListener('click', function (e) {
       e.stopPropagation();
+      chatWidget.style.display = 'none';
       chatWidget.classList.remove('active');
-      chatWidget.style.display = '';
     });
   }
 
   if (chatIcon && chatWidget) {
     chatIcon.addEventListener('click', function (e) {
       e.stopPropagation();
+      chatWidget.style.display = 'flex';
       chatWidget.classList.add('active');
-      chatWidget.style.display = '';
     });
   }
 }); 
