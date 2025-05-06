@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aphoria</title>   
+    <link rel="icon" href="pawu618_minimalist_flat_logo_design_for_an_OnlyFans_agency_no_t_c9abaa9b-7794-47a2-81a3-1caf49573823_3.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat-widget.css">
+    <meta name="description" content="Learn more about Aphoria - Your OnlyFans Management Partner">
+    <style>
+        html {
+            scroll-behavior: smooth;    
+        }
+    </style>
+</head>
+<body data-page="about">
+    <nav class="navbar">
+        <div class="logo">
+            <img src="LUMORA Logo.png" alt="LUMORA Logo" class="logo-icon">
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="https://www.instagram.com/aurumheritage/" target="_blank" rel="noopener noreferrer" class="cta-button">Enroll Now</a>
+        </div>
+    </nav>
+
+    <!-- Burger Button (Mobile Only) -->
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-links">
+            <a href="index.html" onclick="closeMenu()">Home</a>
+            <a href="about.html" onclick="closeMenu()">About Us</a>
+            <a href="services.html" onclick="closeMenu()">Services</a>
+            <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+            <a href="https://www.instagram.com/aurumheritage/" target="_blank" rel="noopener noreferrer" class="cta-button" onclick="closeMenu()">Enroll Now</a>
+        </div>
+    </div>
+
+    <section class="about-hero section">
+        <div class="about-us-outer-card">
+            <h1 class="page-title" data-aos="fade-up"><span class="dot"></span>About Us</h1>
+            <div class="about-hero-text">
+                <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+                    <p class="about-text">At Aphoria, we believe in illuminating your creative journey. Our mission is to empower content creators with innovative tools, expert guidance, and a supportive community.</p>
+                </div>
+                <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+                    <p class="about-text">Blending advanced technology with proven strategies, we help you unlock your full potential, grow your audience, and maximize your earnings—while staying true to your unique voice.</p>
+                </div>
+                <div class="glass-card" data-aos="fade-up" data-aos-delay="300">
+                    <p class="about-text">Join us and experience a new era of digital creativity, where your ambitions become reality and your influence shines brighter than ever.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- FOOTER -->
+    <footer class="colorful-footer">
+        <div class="footer-blobs">
+            <div class="footer-blob footer-blob1"></div>
+            <div class="footer-blob footer-blob2"></div>
+        </div>
+    </footer>
+
+    <!-- Chat Icon and Widget -->
+    <button class="chat-icon">💬</button>
+    <div class="chat-widget" style="display: none;">
+        <div class="chat-header">
+            <h3>Frequently Asked Questions</h3>
+            <button class="close-chat">×</button>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search frequently asked questions..." readonly>
+        </div>
+        <div class="faq-container">
+            <!-- FAQ items will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 50
+        });
+    </script>
+    <script src="chat-widget.js"></script>
+    <script src="Web Design.js"></script>
+    <script>
+    // Fade-out animation on page change
+    document.querySelectorAll('a[href]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href && !href.startsWith('#') && !this.classList.contains('cta-button')) {
+                e.preventDefault();
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location = href;
+                }, 400);
+            }
+        });
+    });
+    </script>
+</body>
+</html> 
