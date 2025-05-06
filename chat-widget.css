@@ -213,9 +213,9 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .chat-widget {
-        width: 70vw;
-        max-width: 180px;
-        height: 10vh;
+        width: 95vw;
+        max-width: 98vw;
+        height: 80vh;
         left: 50%;
         right: auto;
         bottom: 2vh;
@@ -226,9 +226,6 @@
         background: #fff;
         position: fixed;
         overflow: hidden;
-    }
-    .chat-widget::after {
-        display: none;
     }
     .chat-widget.active {
         transform: translate(-50%, 0);
@@ -246,41 +243,50 @@
         padding: 0.4rem 0.8rem 0.4rem 0.8rem;
     }
     .faq-container {
-        padding: 8px;
+        padding: 20px;
     }
     .faq-item {
-        margin-bottom: 0.5rem;
-        padding-bottom: 0.5rem;
+        margin-bottom: 18px;
+        padding-bottom: 18px;
     }
     .faq-question {
-        font-size: 0.9rem;
-        padding: 0.3rem 0;
+        font-size: 1.15rem;
+        padding: 0.7rem 0;
     }
     .faq-answer {
-        font-size: 0.8rem;
-        margin-top: 0.3rem;
-        padding-left: 0.3rem;
-        line-height: 1.3;
+        font-size: 1.05rem;
+        margin-top: 0.6rem;
+        padding-left: 0.6rem;
+        line-height: 1.5;
     }
 }
 
 @media (max-width: 480px) {
+    .chat-widget {
+        width: 100vw;
+        max-width: 100vw;
+        height: 90vh;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
     .faq-container {
-        padding: 6px;
+        padding: 14px;
     }
     .faq-item {
-        margin-bottom: 0.4rem;
-        padding-bottom: 0.4rem;
+        margin-bottom: 14px;
+        padding-bottom: 14px;
     }
     .faq-question {
-        font-size: 0.85rem;
-        padding: 0.25rem 0;
+        font-size: 1.05rem;
+        padding: 0.6rem 0;
     }
     .faq-answer {
-        font-size: 0.75rem;
-        margin-top: 0.25rem;
-        padding-left: 0.25rem;
-        line-height: 1.2;
+        font-size: 0.95rem;
+        margin-top: 0.5rem;
+        padding-left: 0.5rem;
+        line-height: 1.4;
     }
 }
 
