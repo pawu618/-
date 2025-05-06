@@ -37,6 +37,11 @@ class ChatWidget {
         // Setup close button
         const closeButton = this.widget.querySelector('.close-chat');
         closeButton.addEventListener('click', () => this.toggleChat());
+        // Add touchstart for mobile reliability
+        closeButton.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            this.toggleChat();
+        }, {passive: false});
     }
 
     toggleChat() {
