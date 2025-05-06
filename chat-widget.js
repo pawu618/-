@@ -28,6 +28,11 @@ class ChatWidget {
     setupEventListeners() {
         // Setup chat icon click
         this.chatIcon.addEventListener('click', () => this.toggleChat());
+        // Add touchstart for mobile reliability
+        this.chatIcon.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            this.toggleChat();
+        }, {passive: false});
         
         // Setup close button
         const closeButton = this.widget.querySelector('.close-chat');
@@ -36,7 +41,13 @@ class ChatWidget {
 
     toggleChat() {
         this.isOpen = !this.isOpen;
-        this.widget.style.display = this.isOpen ? 'flex' : 'none';
+        this.widget.classList.toggle('active', this.isOpen);
+        // Optionally, for desktop fallback:
+        if (window.innerWidth > 768) {
+            this.widget.style.display = this.isOpen ? 'flex' : 'none';
+        } else {
+            this.widget.style.display = '';
+        }
     }
 
     displayFAQs() {
