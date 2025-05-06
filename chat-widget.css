@@ -281,6 +281,8 @@
     .faq-item {
         margin-bottom: 2px;
         padding-bottom: 2px;
+        border-bottom: 0.5px solid #eee !important;
+        background: rgba(0,0,0,0.01) !important;
     }
     .faq-question {
         font-size: 0.7rem;
