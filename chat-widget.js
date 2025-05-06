@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
   if (closeBtn && chatWidget) {
     closeBtn.addEventListener('click', function (e) {
       e.stopPropagation();
-      chatWidget.style.display = 'none';
       chatWidget.classList.remove('active');
     });
   }
@@ -129,7 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
   if (chatIcon && chatWidget) {
     chatIcon.addEventListener('click', function (e) {
       e.stopPropagation();
-      chatWidget.style.display = 'flex';
       chatWidget.classList.add('active');
     });
   }
