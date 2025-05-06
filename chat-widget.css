@@ -276,21 +276,21 @@
         transform: none !important;
     }
     .faq-container {
-        padding: 6px;
+        padding: 2px;
     }
     .faq-item {
-        margin-bottom: 6px;
-        padding-bottom: 6px;
+        margin-bottom: 2px;
+        padding-bottom: 2px;
     }
     .faq-question {
-        font-size: 0.85rem;
-        padding: 0.25rem 0;
+        font-size: 0.7rem;
+        padding: 0.1rem 0;
     }
     .faq-answer {
-        font-size: 0.75rem;
-        margin-top: 0.2rem;
-        padding-left: 0.2rem;
-        line-height: 1.2;
+        font-size: 0.6rem;
+        margin-top: 0.1rem;
+        padding-left: 0.1rem;
+        line-height: 1.1;
     }
 }
 

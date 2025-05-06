@@ -96,4 +96,26 @@ class ChatWidget {
 // Initialize the chat widget when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new ChatWidget();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  var chatWidget = document.querySelector('.chat-widget');
+  var closeBtn = document.querySelector('.close-chat');
+  var chatIcon = document.querySelector('.chat-icon');
+
+  if (closeBtn && chatWidget) {
+    closeBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      chatWidget.classList.remove('active');
+      chatWidget.style.display = '';
+    });
+  }
+
+  if (chatIcon && chatWidget) {
+    chatIcon.addEventListener('click', function (e) {
+      e.stopPropagation();
+      chatWidget.classList.add('active');
+      chatWidget.style.display = '';
+    });
+  }
 }); 
