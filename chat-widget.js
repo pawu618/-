@@ -28,41 +28,15 @@ class ChatWidget {
     setupEventListeners() {
         // Setup chat icon click
         this.chatIcon.addEventListener('click', () => this.toggleChat());
-        // Add touchstart for mobile reliability
-        this.chatIcon.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            this.toggleChat();
-        }, {passive: false});
         
-        // Event delegation for close button (works for dynamic content)
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('close-chat')) {
-                console.log('Close button clicked (delegated)');
-                this.isOpen = false;
-                this.widget.classList.remove('active');
-                this.widget.style.display = '';
-            }
-        });
-        document.addEventListener('touchend', (e) => {
-            if (e.target.classList.contains('close-chat')) {
-                e.preventDefault();
-                console.log('Close button touchend (delegated)');
-                this.isOpen = false;
-                this.widget.classList.remove('active');
-                this.widget.style.display = '';
-            }
-        }, {passive: false});
+        // Setup close button
+        const closeButton = this.widget.querySelector('.close-chat');
+        closeButton.addEventListener('click', () => this.toggleChat());
     }
 
     toggleChat() {
         this.isOpen = !this.isOpen;
-        this.widget.classList.toggle('active', this.isOpen);
-        // Optionally, for desktop fallback:
-        if (window.innerWidth > 768) {
-            this.widget.style.display = this.isOpen ? 'flex' : 'none';
-        } else {
-            this.widget.style.display = '';
-        }
+        this.widget.style.display = this.isOpen ? 'flex' : 'none';
     }
 
     displayFAQs() {
@@ -111,24 +85,4 @@ class ChatWidget {
 // Initialize the chat widget when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     new ChatWidget();
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  var chatWidget = document.querySelector('.chat-widget');
-  var closeBtn = document.querySelector('.close-chat');
-  var chatIcon = document.querySelector('.chat-icon');
-
-  if (closeBtn && chatWidget) {
-    closeBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      chatWidget.classList.remove('active');
-    });
-  }
-
-  if (chatIcon && chatWidget) {
-    chatIcon.addEventListener('click', function (e) {
-      e.stopPropagation();
-      chatWidget.classList.add('active');
-    });
-  }
 }); 
