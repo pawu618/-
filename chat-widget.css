@@ -27,7 +27,8 @@
     justify-content: center;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    position: relative;
+    position: fixed;
+    z-index: 9999;
     overflow: hidden;
 }
 
@@ -230,6 +231,8 @@
         width: var(--chat-icon-mobile-size);
         height: var(--chat-icon-mobile-size);
         font-size: 22px;
+        bottom: 15px;
+        right: 15px;
     }
 }
 
